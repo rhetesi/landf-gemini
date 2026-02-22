@@ -1,16 +1,16 @@
 export class Modal {
-    constructor(modalId) {
-        this.element = document.getElementById(modalId);
-        this.instance = new bootstrap.Modal(this.element);
-        this.title = this.element.querySelector('.modal-title');
-        this.subtitle = this.element.querySelector('.modal-subtitle');
-        this.body = this.element.querySelector('.modal-body');
+    constructor(id) {
+        this.el = document.getElementById(id);
+        this.bs = new bootstrap.Modal(this.el);
+        this.title = this.el.querySelector('.modal-title');
+        this.subtitle = this.el.querySelector('.modal-subtitle');
+        this.body = this.el.querySelector('.modal-body');
     }
 
-    show(title, subtitle, html) {
+    open(title, subtitle, content) {
         this.title.textContent = title;
         this.subtitle.textContent = subtitle;
-        this.body.innerHTML = html;
-        this.instance.show();
+        this.body.innerHTML = content;
+        this.bs.show();
     }
 }
