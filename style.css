@@ -1,70 +1,58 @@
 :root {
-    --primary-blue: #1e5bb9;
+    --main-blue: #1e5bb9;
     --dark-blue: #15428a;
-    --app-bg: #f8fafc;
-    --input-bg: #f1f5f9;
-    --border-gray: #e2e8f0;
-    --admin-orange: #f97316;
+    --bg-app: #f1f5f9;
+    --orange: #f97316;
 }
 
-body.bg-app {
-    background-color: var(--app-bg);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
+body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif; }
 
-/* Navbar stílusok */
-.navbar-custom { background-color: var(--primary-blue); }
+.navbar-custom { background-color: var(--main-blue); }
 
-.btn-nav-custom {
-    background-color: rgba(255, 255, 255, 0.2);
+.btn-nav-blue {
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
     border: none;
-    border-radius: 8px; /* Lekerekített sarkok minden oldalon éllel */
-    transition: background 0.2s;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    padding: 6px 14px;
 }
 
-.btn-nav-custom:hover { background-color: var(--dark-blue); color: white; }
-
-/* Infopillek - Teljesen lekerekített oldalakkal */
-.badge-admin, .infopill {
-    border-radius: 50px !important;
-    font-weight: 600;
+.btn-primary-custom {
+    background-color: var(--main-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 20px;
 }
 
-.badge-admin { background-color: var(--admin-orange); color: white; padding: 2px 12px; }
-
-/* Modal specifikus beállítások a fix lábrészhez */
-.modal-content {
-    border-radius: 12px;
-    max-height: 90vh; /* Ne lógjon le a képernyőről */
-    display: flex;
-    flex-direction: column;
+.badge-role-orange {
+    background-color: var(--orange);
+    color: white;
+    border-radius: 50px;
+    padding: 3px 12px;
 }
 
-.modal-body {
-    overflow-y: auto; /* Itt engedélyezzük a görgetést */
-    flex: 1 1 auto;
+.pill-stat {
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
 }
 
-.modal-footer {
-    border-top: 1px solid var(--border-gray);
-    background-color: white;
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-}
+.pill-blue-light { background: #e0f2fe; color: #0369a1; }
+.pill-orange-light { background: #ffedd5; color: #c2410c; }
+.pill-gray-light { background: #f1f5f9; color: #475569; }
+.pill-blue-dark { background: var(--main-blue); color: white; }
 
-.custom-input {
-    background-color: var(--input-bg);
-    border: 1px solid var(--border-gray);
+.custom-field {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
 }
 
-.section-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-top: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-gray);
-}
+.form-label-small { font-size: 0.8rem; font-weight: 600; color: #475569; }
+
+/* Belső görgetősáv stílusa a Modalhoz */
+.modal-body::-webkit-scrollbar { width: 6px; }
+.modal-body::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
