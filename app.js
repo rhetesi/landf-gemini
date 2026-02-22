@@ -1,9 +1,8 @@
 import { UIController } from './modules/UIController.js';
+import { Modal } from './modules/Modal.js';
 
-/**
- * Alkalmazás indítása moduláris felépítéssel
- */
 document.addEventListener('DOMContentLoaded', () => {
-    const app = new UIController();
+    const modalHandler = new Modal('generalModal');
+    const app = new UIController(modalHandler);
     app.init();
 });
