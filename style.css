@@ -7,12 +7,11 @@
 
 body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif; }
 
-/* Header */
+/* Header & Logo */
 .navbar-custom { background-color: var(--main-blue); }
-.logo-box { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: white; border-radius: 8px; }
-.logo-box i { color: var(--main-blue); }
+.logo-box { display: flex; align-items: center; justify-content: center; }
 
-/* Gombok */
+/* Gombok - Egységesített, lekerekített sarkú (de nem pirula) forma oldalélekkel */
 .btn-nav-blue {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
@@ -32,26 +31,40 @@ body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif;
     padding: 8px 20px;
 }
 
-/* Statisztikák */
-.badge-role-orange { background-color: var(--orange); color: white; border-radius: 50px; padding: 3px 12px; font-size: 0.7rem; }
-.pill-stat { padding: 4px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+/* Infopillek - Teljesen lekerekített (pill) forma a szerepkörhöz és a statisztikákhoz */
+.badge-role-orange {
+    background-color: var(--orange);
+    color: white;
+    border-radius: 50px;
+    padding: 3px 12px;
+    font-size: 0.7rem;
+}
+
+.pill-stat {
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
 .pill-blue-light { background: #e0f2fe; color: #0369a1; }
 .pill-orange-light { background: #ffedd5; color: #c2410c; }
 .pill-gray-light { background: #f1f5f9; color: #475569; }
 .pill-blue-dark { background: var(--main-blue); color: white; }
 
-/* Kártyák és Formok */
-.custom-field { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; }
+/* Form Elemek */
+.custom-field {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+}
 .form-label-small { font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 4px; }
 
-/* Modal - Fix footer és belső görgetés */
-.modal-content { border-radius: 16px; max-height: 90vh; display: flex; flex-direction: column; border: none; }
-.modal-body { overflow-y: auto; flex: 1 1 auto; padding: 2rem; }
-.modal-footer { border-top: 1px solid #e2e8f0; padding: 1.25rem 1.5rem; background: #fff; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; }
+/* Modal - A képeken látható belső görgetősávval, fix lábléccel */
+.modal-content { border-radius: 16px; max-height: 90vh; display: flex; flex-direction: column; }
+.modal-body { overflow-y: auto; flex: 1 1 auto; }
+.modal-footer { border-top: 1px solid #e2e8f0; padding: 1.25rem 1.5rem; }
 
-.section-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 20px 0 12px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
-.char-counter { font-size: 0.75rem; color: #94a3b8; text-align: right; margin-top: 4px; }
-
-/* Empty State */
-.empty-state { padding: 80px 0; text-align: center; color: #94a3b8; }
-.empty-state i { font-size: 5rem; opacity: 0.3; }
+.section-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 20px 0 12px 0; }
+.char-counter { font-size: 0.75rem; color: #94a3b8; text-align: right; }

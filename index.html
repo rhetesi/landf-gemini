@@ -3,105 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talált Tárgyak</title>
+    <title>Talált Tárgyak Nyilvántartása</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-app">
-    <header class="navbar-custom shadow-sm sticky-top">
+
+    <header class="navbar-custom shadow-sm">
         <div class="container-fluid px-4 d-flex align-items-center justify-content-between py-2">
             <div class="d-flex align-items-center">
-                <div class="logo-box me-3"><i class="bi bi-box-seam fs-4"></i></div>
-                <div class="text-white">
-                    <h1 class="h6 mb-0 fw-bold text-uppercase">Talált Tárgyak Nyilvántartása</h1>
-                    <div class="small opacity-75">Lost & Found Management System</div>
+                <div class="logo-box me-3">
+                    <i class="bi bi-box-seam text-white fs-3"></i>
+                </div>
+                <div class="header-titles">
+                    <h1 class="h5 mb-0 fw-bold text-white">Talált Tárgyak Nyilvántartása</h1>
+                    <div class="small text-white-50">Lost & Found Management System</div>
                 </div>
             </div>
+            
             <div class="d-flex align-items-center gap-2">
-                <div class="text-end text-white me-3 d-none d-md-block">
-                    <div class="small fw-bold">Adminisztrátor</div>
-                    <span class="badge badge-role-orange text-uppercase">Adminisztrátor</span>
+                <div class="admin-profile d-none d-lg-block me-3 text-end">
+                    <div class="text-white small"><i class="bi bi-person me-1"></i> Adminisztrátor</div>
+                    <span class="badge badge-role-orange">Adminisztrátor</span>
                 </div>
-                <button class="btn btn-nav-blue">Kiadott</button>
-                <button class="btn btn-nav-blue">Helyszínek</button>
-                <button class="btn btn-nav-blue">Felhasználók</button>
-                <button class="btn btn-nav-blue"><i class="bi bi-box-arrow-right"></i></button>
+                <button class="btn btn-nav-blue"><i class="bi bi-box-arrow-up me-1"></i> Kiadott</button>
+                <button class="btn btn-nav-blue"><i class="bi bi-geo-alt me-1"></i> Helyszínek</button>
+                <button class="btn btn-nav-blue"><i class="bi bi-people me-1"></i> Felhasználók</button>
+                <button class="btn btn-nav-blue ms-2"><i class="bi bi-box-arrow-right me-1"></i> Kijelentkezés</button>
             </div>
         </div>
     </header>
 
     <main class="container-fluid p-4">
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
-            <div class="card-body p-4">
-                <h6 class="fw-bold mb-4 text-muted text-uppercase small"><i class="bi bi-search me-2"></i>Keresés és szűrés</h6>
-                <div class="row g-3">
-                    <div class="col-md-2">
-                        <label class="form-label-small">Helyszín</label>
-                        <input type="text" class="form-control custom-field" placeholder="Helyszín...">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Dátumtól</label>
-                        <input type="date" class="form-control custom-field">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Dátumig</label>
-                        <input type="date" class="form-control custom-field">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Megnevezés</label>
-                        <input type="text" class="form-control custom-field" placeholder="Tárgy neve...">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Leírás</label>
-                        <input type="text" class="form-control custom-field" placeholder="Tulajdonságok...">
-                    </div>
-                    <div class="col-md-2 d-flex align-items-end">
-                        <button class="btn btn-primary-custom w-100">Szűrés</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="d-flex gap-2">
                 <span class="pill-stat pill-blue-light">Aktív: 5 db</span>
                 <span class="pill-stat pill-orange-light">Raktározható: 3 db</span>
-                <span class="pill-stat pill-gray-light">Raktárban: 2 db</span>
                 <span class="pill-stat pill-blue-dark">Összes: 7 db</span>
             </div>
-            <div class="d-flex gap-2">
-                <div class="btn-group bg-white rounded-3 shadow-sm p-1">
-                    <button class="btn btn-sm btn-light active">Aktív</button>
-                    <button class="btn btn-sm btn-light">Raktár</button>
-                </div>
-                <button class="btn btn-primary-custom" id="btnAddNew">
-                    <i class="bi bi-plus-lg me-1"></i> Új tárgy rögzítése
-                </button>
-            </div>
+            <button class="btn btn-primary-custom" id="btnAddNew">
+                <i class="bi bi-plus-lg me-1"></i> Új tárgy rögzítése
+            </button>
         </div>
-
-        <div class="card border-0 shadow-sm rounded-4 empty-state">
-            <i class="bi bi-box-seam"></i>
-            <h4 class="mt-4 fw-bold">Nincs megjeleníthető adat</h4>
-            <p class="text-muted">Kérjük, rögzítsen egy új tárgyat a rendszerbe.</p>
-        </div>
+        <div id="mainContent" class="row g-4"></div>
     </main>
 
-    <div class="modal fade" id="generalModal" tabindex="-1">
+    <div class="modal fade" id="generalModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
+            <div class="modal-content border-0 shadow-lg">
                 <div class="modal-header border-0 px-4 pt-4">
                     <div>
-                        <h4 class="modal-title fw-bold">Cím</h4>
-                        <p class="modal-subtitle text-muted mb-0 small">Leírás</p>
+                        <h5 class="modal-title fw-bold mb-1">Cím</h5>
+                        <p class="modal-subtitle text-secondary small mb-0">Leírás</p>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal">Mégse</button>
-                    <button type="button" class="btn btn-primary-custom" id="modalSubmit">Rögzítés</button>
+                <div class="modal-body px-4 py-2">
+                    </div>
+                <div class="modal-footer border-top px-4">
+                    <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">Mégse</button>
+                    <button type="button" class="btn btn-primary-custom px-4 py-2" id="modalSubmit">Rögzítés</button>
                 </div>
             </div>
         </div>
