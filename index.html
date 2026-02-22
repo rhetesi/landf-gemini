@@ -13,74 +13,37 @@
     <header class="navbar-custom shadow-sm">
         <div class="container-fluid px-4 d-flex align-items-center justify-content-between py-2">
             <div class="d-flex align-items-center">
-                <div class="logo-box me-3">
-                    <i class="bi bi-box-seam text-white fs-3"></i>
-                </div>
+                <div class="logo-box me-3"><i class="bi bi-box-seam text-white fs-3"></i></div>
                 <div class="header-titles">
                     <h1 class="h5 mb-0 fw-bold text-white">Talált Tárgyak Nyilvántartása</h1>
                     <div class="small text-white-50">Lost & Found Management System</div>
                 </div>
             </div>
-            
             <div class="d-flex align-items-center gap-2">
                 <div class="admin-profile d-none d-lg-block me-3 text-end">
-                    <div class="text-white small"><i class="bi bi-person me-1"></i> Adminisztrátor</div>
+                    <div class="text-white small">Adminisztrátor</div>
                     <span class="badge badge-role-orange">Adminisztrátor</span>
                 </div>
-                <button class="btn btn-nav-blue"><i class="bi bi-box-arrow-up me-1"></i> Kiadott</button>
-                <button class="btn btn-nav-blue"><i class="bi bi-geo-alt me-1"></i> Helyszínek</button>
-                <button class="btn btn-nav-blue"><i class="bi bi-people me-1"></i> Felhasználók</button>
-                <button class="btn btn-nav-blue ms-2"><i class="bi bi-box-arrow-right me-1"></i> Kijelentkezés</button>
+                <button class="btn btn-nav-blue">Kiadott</button>
+                <button class="btn btn-nav-blue">Helyszínek</button>
+                <button class="btn btn-nav-blue">Felhasználók</button>
+                <button class="btn btn-nav-blue ms-2">Kijelentkezés</button>
             </div>
         </div>
     </header>
 
     <main class="container-fluid p-4">
-        <section class="card border-0 shadow-sm rounded-4 mb-4">
-            <div class="card-body p-4">
-                <h6 class="fw-bold mb-4"><i class="bi bi-search me-2"></i> Keresés és szűrés</h6>
-                <form class="row g-3">
-                    <div class="col-md-2">
-                        <label class="form-label-small">Helyszín</label>
-                        <input type="text" class="form-control custom-field" placeholder="pl. Főépület">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Dátumtól</label>
-                        <input type="text" class="form-control custom-field" placeholder="éééé. hh. nn.">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Dátumig</label>
-                        <input type="text" class="form-control custom-field" placeholder="éééé. hh. nn.">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Megnevezés</label>
-                        <input type="text" class="form-control custom-field" placeholder="pl. Kulcs">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Leírás/tulajdonság</label>
-                        <input type="text" class="form-control custom-field" placeholder="pl. fekete, bőr">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label-small">Rögzítő</label>
-                        <select class="form-select custom-field">
-                            <option>Mind</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </section>
-
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <div class="pill-stats d-flex gap-2">
+            <div class="d-flex gap-2">
                 <span class="pill-stat pill-blue-light">Aktív: 5 db</span>
                 <span class="pill-stat pill-orange-light">Raktározható: 3 db</span>
-                <span class="pill-stat pill-gray-light">Raktárban: 2 db</span>
                 <span class="pill-stat pill-blue-dark">Összes: 7 db</span>
             </div>
             <button class="btn btn-primary-custom" id="btnAddNew">
                 <i class="bi bi-plus-lg me-1"></i> Új tárgy rögzítése
             </button>
         </div>
+        <div id="mainContent" class="row g-4"></div>
     </main>
 
     <div class="modal fade" id="generalModal" tabindex="-1" aria-hidden="true">
@@ -93,9 +56,9 @@
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body px-4 py-2" style="max-height: 65vh; overflow-y: auto;">
+                <div class="modal-body px-4 py-2">
                     </div>
-                <div class="modal-footer border-top-0 px-4 pb-4">
+                <div class="modal-footer border-top px-4">
                     <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">Mégse</button>
                     <button type="button" class="btn btn-primary-custom px-4 py-2" id="modalSubmit">Rögzítés</button>
                 </div>

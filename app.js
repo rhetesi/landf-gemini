@@ -1,8 +1,8 @@
-import { Modal } from './modules/Modal.js';
 import { UIController } from './modules/UIController.js';
+import { Modal } from './modules/Modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const mainModal = new Modal('itemModal');
-    const app = new UIController(mainModal);
-    app.init();
+    const modal = new Modal('generalModal');
+    const ui = new UIController(modal);
+    ui.init();
 });
