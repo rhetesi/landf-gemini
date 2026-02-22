@@ -1,121 +1,70 @@
 :root {
-    /* Alapszínek az elemzés alapján */
     --primary-blue: #1e5bb9;
     --dark-blue: #15428a;
     --app-bg: #f8fafc;
-    --card-bg: #ffffff;
     --input-bg: #f1f5f9;
     --border-gray: #e2e8f0;
-    --text-secondary: #64748b;
     --admin-orange: #f97316;
-    
-    /* Pill színek */
-    --pill-active-bg: #e0f2fe;
-    --pill-active-text: #0369a1;
-    --pill-storable-bg: #ffedd5;
-    --pill-storable-text: #c2410c;
-    --pill-warehouse-bg: #f1f5f9;
-    --pill-warehouse-text: #475569;
-
-    /* Formák */
-    --btn-radius: 8px; /* Szögletesebb gombok */
-    --pill-radius: 50px; /* Teljesen lekerekített pillek */
 }
 
 body.bg-app {
     background-color: var(--app-bg);
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    color: #1e293b;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Header & Logo (Inverz megoldás) */
-.navbar-custom {
-    background-color: var(--primary-blue);
-    padding: 0.75rem 0;
-}
+/* Navbar stílusok */
+.navbar-custom { background-color: var(--primary-blue); }
 
-.logo-container {
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-container i {
-    color: var(--primary-blue); /* Inverz: fehér háttér, kék ikon */
-    font-size: 1.5rem;
-}
-
-/* Navigációs gombok */
 .btn-nav-custom {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    border-radius: var(--btn-radius);
-    padding: 7px 15px;
-    font-size: 0.85rem;
+    border-radius: 8px; /* Lekerekített sarkok minden oldalon éllel */
     transition: background 0.2s;
 }
 
-.btn-nav-custom:hover {
-    background-color: var(--dark-blue);
-    color: white;
-}
+.btn-nav-custom:hover { background-color: var(--dark-blue); color: white; }
 
-/* Adminisztrátor Badge (Pill forma) */
-.badge-admin {
-    background-color: var(--admin-orange);
-    color: white;
-    border-radius: var(--pill-radius);
-    padding: 3px 12px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-/* Statisztikai Infopillek (Keskenyebb, pill forma) */
-.infopill {
-    padding: 4px 14px;
-    border-radius: var(--pill-radius);
-    font-size: 0.75rem;
+/* Infopillek - Teljesen lekerekített oldalakkal */
+.badge-admin, .infopill {
+    border-radius: 50px !important;
     font-weight: 600;
-    white-space: nowrap;
-    border: 1px solid transparent;
 }
 
-.pill-active { background: var(--pill-active-bg); color: var(--pill-active-text); }
-.pill-storable { background: var(--pill-storable-bg); color: var(--pill-storable-text); }
-.pill-warehouse { background: var(--pill-warehouse-bg); color: var(--pill-warehouse-text); }
-.pill-total { background: var(--primary-blue); color: white; }
+.badge-admin { background-color: var(--admin-orange); color: white; padding: 2px 12px; }
 
-/* Akció gomb (Új tárgy rögzítése) - megegyezik a nav gombokkal */
-.btn-action-primary {
-    background-color: var(--primary-blue);
-    color: white;
-    border: none;
-    border-radius: var(--btn-radius);
-    padding: 8px 20px;
-    font-weight: 500;
+/* Modal specifikus beállítások a fix lábrészhez */
+.modal-content {
+    border-radius: 12px;
+    max-height: 90vh; /* Ne lógjon le a képernyőről */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Keresőmezők */
+.modal-body {
+    overflow-y: auto; /* Itt engedélyezzük a görgetést */
+    flex: 1 1 auto;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-gray);
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
 .custom-input {
     background-color: var(--input-bg);
     border: 1px solid var(--border-gray);
-    border-radius: var(--btn-radius);
-    padding: 10px;
+    border-radius: 8px;
 }
 
-/* Mobil optimalizálás */
-@media (max-width: 768px) {
-    .nav-scroll {
-        display: flex;
-        overflow-x: auto;
-        gap: 8px;
-        padding-bottom: 10px;
-    }
-    .nav-scroll .btn-nav-custom { white-space: nowrap; }
+.section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-gray);
 }
