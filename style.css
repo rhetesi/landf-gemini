@@ -1,81 +1,54 @@
 :root {
     --main-blue: #1e5bb9;
     --dark-blue: #15428a;
-    --bg-app: #f1f5f9;
+    --bg-gray: #f8fafc;
+    --border-gray: #e2e8f0;
+    --input-gray: #f1f5f9;
     --orange: #f97316;
 }
 
-body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif; }
+body.bg-app { background-color: var(--bg-gray); font-family: 'Segoe UI', system-ui, sans-serif; }
 
-/* Header & Logo */
+/* Navbar & Profile */
 .navbar-custom { background-color: var(--main-blue); }
-.logo-box { display: flex; align-items: center; justify-content: center; }
+.badge-admin { background-color: var(--orange); color: white; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; }
 
-/* Gombok */
-.btn-nav-blue {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    padding: 6px 14px;
-}
-.btn-nav-blue:hover { background-color: rgba(255, 255, 255, 0.2); color: white; }
-
-.btn-primary-custom {
-    background-color: var(--main-blue);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
-    padding: 8px 20px;
-}
-
-/* Infopillek */
-.badge-role-orange {
-    background-color: var(--orange);
-    color: white;
-    border-radius: 50px;
-    padding: 3px 12px;
-    font-size: 0.7rem;
-}
-
-.pill-stat {
-    padding: 4px 14px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-.pill-blue-light { background: #e0f2fe; color: #0369a1; }
-.pill-orange-light { background: #ffedd5; color: #c2410c; }
-.pill-gray-light { background: #f1f5f9; color: #475569; }
-.pill-blue-dark { background: var(--main-blue); color: white; }
+/* Buttons */
+.btn-nav-custom { background-color: rgba(255, 255, 255, 0.15); border: none; color: white; font-size: 0.85rem; padding: 7px 14px; border-radius: 6px; }
+.btn-action-primary { background-color: var(--main-blue); color: white; border: none; font-size: 0.85rem; font-weight: 500; padding: 7px 18px; border-radius: 6px; }
+.btn-action-primary:hover { background-color: var(--dark-blue); color: white; }
+.btn-cancel { border: 1px solid var(--border-gray); color: #475569; font-weight: 500; font-size: 0.85rem; border-radius: 6px; }
 
 /* Form Elemek */
-.custom-field {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    padding: 8px 12px;
-}
-.form-label-small { font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 4px; }
+.form-label-custom { font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 4px; }
+.custom-input { background-color: var(--input-gray); border: 1px solid var(--border-gray); border-radius: 8px; padding: 10px 12px; font-size: 0.9rem; }
+.custom-input-icon { border-color: var(--border-gray); border-radius: 0 8px 8px 0 !important; color: #64748b; }
 
-/* Modal Specifikus: Fix lábrész és belső görgetés */
-.modal-content { 
-    border-radius: 16px; 
-    max-height: 90vh; 
-    display: flex; 
-    flex-direction: column; 
-}
-.modal-body { 
-    overflow-y: auto; 
-    flex: 1 1 auto; 
-}
-.modal-footer { 
-    border-top: 1px solid #e2e8f0; 
-    padding: 1.25rem 1.5rem; 
-}
+/* Modal & Form Section */
+.modal-content { border-radius: 12px !important; }
+.form-section-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-top: 1.5rem; margin-bottom: 1rem; }
+.form-section-title:first-child { margin-top: 0; }
 
-.section-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 20px 0 12px 0; }
-.char-counter { font-size: 0.75rem; color: #94a3b8; text-align: right; }
+.char-counter { font-size: 0.7rem; color: #94a3b8; text-align: right; margin-top: 2px; }
+
+/* Photo Buttons */
+.btn-upload { background-color: white; border: 1px solid var(--border-gray); border-radius: 8px; font-size: 0.85rem; padding: 8px 15px; color: #475569; }
+.btn-upload i { margin-right: 6px; }
+
+/* Checkbox Style */
+.custom-checkbox-label { font-size: 0.85rem; font-weight: 600; color: #475569; cursor: pointer; }
+
+/* Pills */
+.infopill { padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; border: 1px solid transparent; }
+.pill-active { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+.pill-storable { background: #ffedd5; color: #c2410c; border-color: #fed7aa; }
+.pill-warehouse { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+.pill-total { background: #1e5bb9; color: white; }
+
+/* Segmented Controls */
+.btn-group-custom { border: 1px solid var(--border-gray); border-radius: 6px; overflow: hidden; display: inline-flex; }
+.tab-btn { border: none; background: white; padding: 8px 16px; font-size: 0.85rem; color: #64748b; border-right: 1px solid var(--border-gray); }
+.tab-btn.active { background-color: #f1f5f9; color: #1e293b; font-weight: 600; }
+.view-switch { border: 1px solid var(--border-gray); border-radius: 6px; display: flex; }
+.v-btn { border: none; background: white; padding: 4px 10px; color: #64748b; }
+.v-btn.active { background-color: var(--main-blue); color: white; }
