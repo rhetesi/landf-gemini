@@ -1,0 +1,137 @@
+/* Konfiguráció a kép alapján */
+:root {
+    --main-blue: #1e5bb9;
+    --dark-blue: #15428a;
+    --bg-gray: #f8fafc;
+    --border-gray: #e2e8f0;
+    --input-gray: #f1f5f9;
+    --orange: #f97316;
+    --btn-radius: 6px; /* Egységes szögletesebb, de kerekített él */
+}
+
+body.bg-app {
+    background-color: var(--bg-gray);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header és Inverz Logo */
+.navbar-custom {
+    background-color: var(--main-blue);
+}
+
+.logo-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.badge-admin {
+    background-color: var(--orange);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* Egységes Gombok */
+.btn-nav-custom {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    border-radius: var(--btn-radius);
+    transition: 0.2s;
+}
+
+.btn-nav-custom:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.btn-action-primary {
+    background-color: var(--main-blue);
+    color: white;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: var(--btn-radius);
+}
+
+.btn-action-primary:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+/* Keskenyebb Infopill-ek */
+.infopill {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.pill-active { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+.pill-storable { background: #ffedd5; color: #c2410c; border-color: #fed7aa; }
+.pill-warehouse { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+.pill-total { background: #1e5bb9; color: white; border-color: var(--main-blue); }
+
+/* Form Elemek */
+.form-label-custom {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.custom-input {
+    background-color: var(--input-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+/* Táblázat Vezérlők */
+.btn-group-custom {
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+.tab-btn {
+    border: none;
+    background: white;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: #64748b;
+    border-right: 1px solid var(--border-gray);
+}
+
+.tab-btn:last-child { border-right: none; }
+.tab-btn.active { background-color: #f1f5f9; color: #1e293b; font-weight: 600; }
+
+.view-switch {
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    display: flex;
+}
+
+.v-btn {
+    border: none;
+    background: white;
+    padding: 4px 10px;
+    color: #64748b;
+}
+
+.v-btn.active { background-color: var(--main-blue); color: white; }
+.v-btn:first-child { border-radius: 5px 0 0 5px; }
+.v-btn:last-child { border-radius: 0 5px 5px 0; }
+
+.form-check-input:checked {
+    background-color: var(--main-blue);
+    border-color: var(--main-blue);
+}
