@@ -11,7 +11,7 @@ body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif;
 .navbar-custom { background-color: var(--main-blue); }
 .logo-box { display: flex; align-items: center; justify-content: center; }
 
-/* Gombok - Egységesített, lekerekített sarkú (de nem pirula) forma oldalélekkel */
+/* Gombok */
 .btn-nav-blue {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
@@ -31,7 +31,7 @@ body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif;
     padding: 8px 20px;
 }
 
-/* Infopillek - Teljesen lekerekített (pill) forma a szerepkörhöz és a statisztikákhoz */
+/* Infopillek */
 .badge-role-orange {
     background-color: var(--orange);
     color: white;
@@ -61,10 +61,21 @@ body.bg-app { background-color: var(--bg-app); font-family: 'Inter', sans-serif;
 }
 .form-label-small { font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 4px; }
 
-/* Modal - A képeken látható belső görgetősávval, fix lábléccel */
-.modal-content { border-radius: 16px; max-height: 90vh; display: flex; flex-direction: column; }
-.modal-body { overflow-y: auto; flex: 1 1 auto; }
-.modal-footer { border-top: 1px solid #e2e8f0; padding: 1.25rem 1.5rem; }
+/* Modal Specifikus: Fix lábléc és belső görgetés */
+.modal-content { 
+    border-radius: 16px; 
+    max-height: 90vh; 
+    display: flex; 
+    flex-direction: column; 
+}
+.modal-body { 
+    overflow-y: auto; 
+    flex: 1 1 auto; 
+}
+.modal-footer { 
+    border-top: 1px solid #e2e8f0; 
+    padding: 1.25rem 1.5rem; 
+}
 
 .section-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 20px 0 12px 0; }
 .char-counter { font-size: 0.75rem; color: #94a3b8; text-align: right; }
