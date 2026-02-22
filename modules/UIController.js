@@ -27,7 +27,10 @@ export class UIController {
                 <div class="row g-3 mb-4">
                     <div class="col-md-6">
                         <label class="form-label-small">Találás dátuma *</label>
-                        <input type="text" class="form-control custom-field" value="2026. 02. 22.">
+                        <div class="input-group">
+                            <input type="text" class="form-control custom-field" placeholder="éééé. hh. nn.">
+                            <span class="input-group-text bg-white border-start-0"><i class="bi bi-calendar3"></i></span>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label-small">Találás helye *</label>
@@ -54,22 +57,22 @@ export class UIController {
                 </div>
 
                 <div class="row g-2 mb-4">
-                    <div class="col-md-3"><label class="form-label-small">Anyag</label><input type="text" class="form-control custom-field"></div>
-                    <div class="col-md-3"><label class="form-label-small">Forma</label><input type="text" class="form-control custom-field"></div>
-                    <div class="col-md-3"><label class="form-label-small">Szín</label><input type="text" class="form-control custom-field"></div>
-                    <div class="col-md-3"><label class="form-label-small">Méret</label><input type="text" class="form-control custom-field"></div>
+                    <div class="col-md-3"><label class="form-label-small">Anyag</label><input type="text" class="form-control custom-field" placeholder="Fém, bőr..."></div>
+                    <div class="col-md-3"><label class="form-label-small">Forma</label><input type="text" class="form-control custom-field" placeholder="Kerek, négyzet..."></div>
+                    <div class="col-md-3"><label class="form-label-small">Szín</label><input type="text" class="form-control custom-field" placeholder="Fekete, piros..."></div>
+                    <div class="col-md-3"><label class="form-label-small">Méret</label><input type="text" class="form-control custom-field" placeholder="10x5 cm"></div>
                 </div>
 
                 <div class="section-title">Fénykép</div>
                 <div class="d-flex gap-2 mb-4">
-                    <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-camera me-1"></i> Fénykép készítése</button>
-                    <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-upload me-1"></i> Feltöltés</button>
+                    <button class="btn btn-outline-secondary btn-sm px-3 py-2"><i class="bi bi-camera me-2"></i>Fénykép készítése</button>
+                    <button class="btn btn-outline-secondary btn-sm px-3 py-2"><i class="bi bi-upload me-2"></i>Feltöltés</button>
                 </div>
 
-                <div class="form-check pb-3">
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="pdfCheck" checked>
-                    <label class="form-check-label small fw-bold" for="pdfCheck">
-                        <i class="bi bi-file-earmark-pdf me-1"></i> Nyilvántartó lap készítése (PDF)
+                    <label class="form-check-label fw-bold" for="pdfCheck">
+                        <i class="bi bi-file-earmark-pdf me-1 text-primary"></i> Nyilvántartó lap készítése (PDF)
                     </label>
                 </div>
             </div>
