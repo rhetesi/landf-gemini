@@ -37,7 +37,14 @@ body.bg-app {
     padding: 7px 14px; 
     border-radius: 6px; 
     font-weight: 500;
+    transition: background-color 0.2s;
 }
+
+/* KIZÁRÓLAG EZEN MARADT HOVER */
+.btn-nav-custom:hover { 
+    background-color: var(--hover-blue) !important; 
+}
+
 .btn-action-primary { 
     background-color: var(--main-blue); 
     color: white; 
@@ -47,16 +54,14 @@ body.bg-app {
     padding: 7px 18px; 
     border-radius: 6px; 
 }
-.btn-action-primary:hover { 
-    background-color: var(--hover-blue); 
-    color: var(--main-blue); 
-}
+
 .btn-cancel { 
     border: 1px solid var(--border-gray); 
     color: #475569; 
     font-weight: 500; 
     font-size: 0.85rem; 
     border-radius: 6px; 
+    background-color: transparent;
 }
 
 /* Form Elemek */
@@ -110,9 +115,6 @@ body.bg-app {
     font-size: 0.85rem; 
     padding: 8px 15px; 
     color: #475569; 
-}
-.btn-upload i { 
-    margin-right: 6px; 
 }
 
 /* Checkbox Style */
